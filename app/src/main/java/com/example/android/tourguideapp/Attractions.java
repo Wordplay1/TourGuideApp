@@ -18,6 +18,11 @@ public class Attractions {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
+    public Attractions(String name, String address, String phoneNumber) {
+        attractName = name;
+        attractAddress = address;
+        attractPhoNumber = phoneNumber;
+    }
     /**
      * 2nd Constructor
      *
