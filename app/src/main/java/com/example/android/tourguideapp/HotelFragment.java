@@ -3,6 +3,7 @@ package com.example.android.tourguideapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,22 +31,23 @@ public class HotelFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.words_list, container, false);
-
-        // data to populate the RecyclerView with
         final ArrayList<Attractions> attraction = new ArrayList<>();
         attraction.add(new Attractions("Philadelphia", "dsdadasdsad", "sdasdsddsad"));
 
+        View rootView = inflater.inflate(R.layout.words_list, container, false);
 
         // set up the RecyclerView
         recyclerView = rootView.findViewById(R.id.recycler_view);
 
 
-        layoutManager = new LinearLayoutManager(getActivity());
-        MainAdapter mainAdapter = new MainAdapter(getActivity(),attraction);
+        layoutManager = new LinearLayoutManager(rootView.getContext());
+        MainAdapter mainAdapter = new MainAdapter(rootView.getContext(),attraction);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mainAdapter);
+
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                DividerItemDecoration.VERTICAL));
 
         return rootView;
     }

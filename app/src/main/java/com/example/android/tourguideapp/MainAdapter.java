@@ -12,39 +12,43 @@ import java.util.ArrayList;
 
 class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
-    private Context c;
+    private LayoutInflater layoutInflater;
     private ArrayList<Attractions> data;
 
     public MainAdapter(Context c, ArrayList<Attractions> data) {
+        this.layoutInflater = LayoutInflater.from(c);
         this.data = data;
-        this.c = c;
+
     }
 
     @Override
-    public MainAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(c).inflate(R.layout.list_item, viewGroup, false);
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View view = layoutInflater.inflate(R.layout.list_item, viewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(MainAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.name.setText(this.data.get(i).getName());
-        viewHolder.address.setText(this.data.get(i).getAddress());
-        viewHolder.phoneNumber.setText(this.data.get(i).getPhoneNumber());
+
+        final Attractions attractions = data.get(i);
+
+        viewHolder.name.setText(attractions.getName());
+        viewHolder.address.setText(attractions.getAddress());
+        viewHolder.phoneNumber.setText(attractions.getPhoneNumber());
     }
 
     @Override
     public int getItemCount() {
-        return data.size();
+        return this.data.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+   class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView name;
-        public TextView address;
-        public TextView phoneNumber;
+        private TextView name;
+        private TextView address;
+        private TextView phoneNumber;
 
-        public ViewHolder(View itemView) {
+        private ViewHolder(View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.text_view_1);
