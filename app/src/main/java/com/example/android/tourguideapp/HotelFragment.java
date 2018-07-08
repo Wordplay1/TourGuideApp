@@ -18,36 +18,31 @@ import java.util.ArrayList;
  */
 public class HotelFragment extends Fragment {
 
-    private RecyclerView recyclerView;
-
-    private RecyclerView.LayoutManager layoutManager;
 
     public HotelFragment() {
-        // Required empty public constructor
+
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.words_list,container,false);
 
-        final ArrayList<Attractions> attraction = new ArrayList<>();
-        attraction.add(new Attractions("Philadelphia", "dsdadasdsad", "sdasdsddsad"));
+        final ArrayList<Attractions> attractions = new ArrayList<>();
 
-        View rootView = inflater.inflate(R.layout.words_list, container, false);
+        attractions.add(new Attractions("Philadelphia","555 Nowhere Ave","555-555-5555"));
 
-        // set up the RecyclerView
-        recyclerView = rootView.findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
 
+        LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
 
-        layoutManager = new LinearLayoutManager(rootView.getContext());
-        MainAdapter mainAdapter = new MainAdapter(rootView.getContext(),attraction);
+        MainAdapter adapter = new MainAdapter(rootView.getContext(),attractions);
 
+        recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(mainAdapter);
 
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
-                DividerItemDecoration.VERTICAL));
+        adapter.notifyDataSetChanged();
 
         return rootView;
     }

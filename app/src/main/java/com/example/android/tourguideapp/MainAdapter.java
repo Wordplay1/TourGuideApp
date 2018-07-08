@@ -8,53 +8,52 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
+class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder>{
 
-    private LayoutInflater layoutInflater;
     private ArrayList<Attractions> data;
+    private LayoutInflater layoutInflater;
 
-    public MainAdapter(Context c, ArrayList<Attractions> data) {
-        this.layoutInflater = LayoutInflater.from(c);
+
+    public MainAdapter(Context context, ArrayList<Attractions> data){
+        this.layoutInflater = LayoutInflater.from(context);
         this.data = data;
-
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View view = layoutInflater.inflate(R.layout.list_item, viewGroup, false);
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = layoutInflater.inflate(R.layout.list_item,parent,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MainAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final Attractions currentAttraction = data.get(position);
 
-        final Attractions attractions = data.get(i);
-
-        viewHolder.name.setText(attractions.getName());
-        viewHolder.address.setText(attractions.getAddress());
-        viewHolder.phoneNumber.setText(attractions.getPhoneNumber());
+        holder.name.setText(currentAttraction.getName());
+        holder.address.setText(currentAttraction.getAddress());
+        holder.phoneNumber.setText(currentAttraction.getPhoneNumber());
     }
 
     @Override
     public int getItemCount() {
-        return this.data.size();
+        return data.size();
     }
-
-   class ViewHolder extends RecyclerView.ViewHolder {
-
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView name;
         private TextView address;
         private TextView phoneNumber;
 
-        private ViewHolder(View itemView) {
-            super(itemView);
+        private ViewHolder(View view) {
+            super(view);
+            name = view.findViewById(R.id.text_view_1);
+            address = view.findViewById(R.id.text_view_2);
+            phoneNumber = view.findViewById(R.id.text_view_3);
 
-            name = itemView.findViewById(R.id.text_view_1);
-            address = itemView.findViewById(R.id.text_view_2);
-            phoneNumber = itemView.findViewById(R.id.text_view_3);
 
         }
     }
+
 }
