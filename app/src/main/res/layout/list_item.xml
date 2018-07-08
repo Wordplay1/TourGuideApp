@@ -18,12 +18,13 @@
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="230dp"
             android:src="@drawable/ic_launcher_background"/>
 
         <TextView
             android:id="@+id/text_view_1"
             android:padding="8dp"
+            android:gravity="center_horizontal"
             tools:text="Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

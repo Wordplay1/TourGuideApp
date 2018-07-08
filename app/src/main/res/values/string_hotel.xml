@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Hotel 1 -->
+    <string name="hotelOneName">Hotel Monaco</string>
+    <string name="hotelOneAddress">433 Chestnut Street, Old City</string>
+    <string name="hotelOnePhoneNumber">1-855-546-7866</string>
+    <string name="hotelOneDescription">With pet-friendly accommodations, new “Rocky” robes and a yoga mat upon arrival,
+        this Kimpton Hotel property caters to Gen Y. The same holds true upstairs, where the Stratus Rooftop Lounge teems
+        with an attractive crowd of young professionals.</string>
+</resources>

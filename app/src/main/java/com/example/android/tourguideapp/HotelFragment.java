@@ -31,7 +31,7 @@ public class HotelFragment extends Fragment {
 
         final ArrayList<Attractions> attractions = new ArrayList<>();
 
-        attractions.add(new Attractions("Philadelphia","555 Nowhere Ave","555-555-5555"));
+        attractions.add(new Attractions(getString(R.string.hotelOneName),getString(R.string.hotelOneAddress),getString(R.string.hotelOnePhoneNumber),getString(R.string.hotelOneDescription),R.drawable.monaco));
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
 

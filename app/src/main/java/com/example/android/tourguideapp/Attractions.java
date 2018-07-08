@@ -14,14 +14,17 @@ public class Attractions {
 
     private String attractPhoNumber;
 
+    private String attractDescription;
+
     private int attractImageResourceId;
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Attractions(String name, String address, String phoneNumber) {
+    public Attractions(String name, String address, String phoneNumber, String description) {
         attractName = name;
         attractAddress = address;
         attractPhoNumber = phoneNumber;
+        attractDescription = description;
     }
     /**
      * 2nd Constructor
@@ -31,10 +34,11 @@ public class Attractions {
      * @param phoneNumber     Attraction phone number
      * @param imageResourceId Attraction image
      */
-    public Attractions(String name, String address, String phoneNumber, int imageResourceId) {
+    public Attractions(String name, String address, String phoneNumber, String description, int imageResourceId) {
         attractName = name;
         attractAddress = address;
         attractPhoNumber = phoneNumber;
+        attractDescription = description;
         attractImageResourceId = imageResourceId;
     }
 
@@ -79,6 +83,9 @@ public class Attractions {
      *
      * @return attractImageResourceId  returns true or false
      */
+    public String getDescription(){
+        return attractDescription;
+    }
     public boolean hasImage() {
         return attractImageResourceId != NO_IMAGE_PROVIDED;
     }
