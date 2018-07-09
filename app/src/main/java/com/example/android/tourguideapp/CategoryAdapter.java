@@ -38,7 +38,7 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         if (position == 0) {
             return "Hotel";
         } else if (position == 1) {
-            return "Restaurants";
+            return "Eat";
         } else if (position == 2) {
             return "Shopping";
         } else {

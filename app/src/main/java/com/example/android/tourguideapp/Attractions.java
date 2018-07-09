@@ -20,10 +20,9 @@ public class Attractions {
 
     private static final int NO_IMAGE_PROVIDED = -1;
 
-    public Attractions(String name, String address, String phoneNumber, String description) {
+    public Attractions(String name, String address, String description) {
         attractName = name;
         attractAddress = address;
-        attractPhoNumber = phoneNumber;
         attractDescription = description;
     }
     /**
@@ -34,10 +33,9 @@ public class Attractions {
      * @param phoneNumber     Attraction phone number
      * @param imageResourceId Attraction image
      */
-    public Attractions(String name, String address, String phoneNumber, String description, int imageResourceId) {
+    public Attractions(String name, String address, String description, int imageResourceId) {
         attractName = name;
         attractAddress = address;
-        attractPhoNumber = phoneNumber;
         attractDescription = description;
         attractImageResourceId = imageResourceId;
     }
@@ -60,14 +58,6 @@ public class Attractions {
         return attractAddress;
     }
 
-    /**
-     * method to return attraction phone number
-     *
-     * @return attractPhoNumber   Phone Number of Attraction
-     */
-    public String getPhoneNumber() {
-        return attractPhoNumber;
-    }
 
     /**
      * method to return image

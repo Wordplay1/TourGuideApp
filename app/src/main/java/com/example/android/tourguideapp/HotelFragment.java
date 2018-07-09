@@ -31,7 +31,11 @@ public class HotelFragment extends Fragment {
 
         final ArrayList<Attractions> attractions = new ArrayList<>();
 
-        attractions.add(new Attractions(getString(R.string.hotelOneName),getString(R.string.hotelOneAddress),getString(R.string.hotelOnePhoneNumber),getString(R.string.hotelOneDescription),R.drawable.monaco));
+        attractions.add(new Attractions(getString(R.string.hotelOneName),getString(R.string.hotelOneAddress),getString(R.string.hotelOneDescription),R.drawable.monaco));
+        attractions.add(new Attractions(getString(R.string.hotelTwoName),getString(R.string.hotelTwoAddress),getString(R.string.hotelTwoDescription),R.drawable.akarittenhouse));
+        attractions.add(new Attractions(getString(R.string.hotelThreeName),getString(R.string.hotelThreeAddress),getString(R.string.hotelThreeDescription),R.drawable.thelogan));
+        attractions.add(new Attractions(getString(R.string.hotelFourName),getString(R.string.hotelFourAddress),getString(R.string.hotelFourDescription),R.drawable.palomar));
+        attractions.add(new Attractions(getString(R.string.hotelFiveName),getString(R.string.hotelFiveAddress),getString(R.string.hotelFiveDescription),R.drawable.lameridian));
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
 
@@ -43,6 +47,8 @@ public class HotelFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         adapter.notifyDataSetChanged();
+
+
 
         return rootView;
     }
