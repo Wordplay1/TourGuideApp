@@ -3,13 +3,12 @@ package com.example.android.tourguideapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+
 
 import java.util.ArrayList;
 
@@ -38,6 +37,8 @@ public class HotelFragment extends Fragment {
         attractions.add(new Attractions(getString(R.string.hotelFiveName),getString(R.string.hotelFiveAddress),getString(R.string.hotelFiveDescription),R.drawable.lameridian));
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
+
+        recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
 

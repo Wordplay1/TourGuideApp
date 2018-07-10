@@ -32,17 +32,21 @@ public class CategoryAdapter extends FragmentPagerAdapter {
         return 4;
     }
 
-
+    /**method returns name strings for tabs
+     *
+     * @param position
+     * @return
+     */
     @Override
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
-            return "Hotel";
+            return mContext.getResources().getString(R.string.tabOne);
         } else if (position == 1) {
-            return "Eat";
+            return mContext.getResources().getString(R.string.tabTwo);
         } else if (position == 2) {
-            return "Shopping";
+            return mContext.getResources().getString(R.string.tabThree);
         } else {
-            return "Play";
+            return mContext.getResources().getString(R.string.tabFour);
         }
     }
 }

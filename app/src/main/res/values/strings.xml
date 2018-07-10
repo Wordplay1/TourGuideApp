@@ -1,7 +1,13 @@
 <resources>
-    <string name="app_name">Tour Guide App</string>
+    <string name="app_name">Philadelphia Tour Guide</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Tab Names -->
+    <string name="tabOne">Hotel</string>
+    <string name="tabTwo">Eat</string>
+    <string name="tabThree">Shopping</string>
+    <string name="tabFour">Play</string>
 
 </resources>

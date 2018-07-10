@@ -31,13 +31,15 @@ public class RestaurantFragment extends Fragment {
         final ArrayList<Attractions> attractions = new ArrayList<>();
 
         attractions.add(new Attractions(getString(R.string.restOneName),getString(R.string.restOneAddress),getString(R.string.restOneDescription),R.drawable.parc));
-        attractions.add(new Attractions(getString(R.string.restTwoName),getString(R.string.restTwoAddress),getString(R.string.restTwoDescription),R.drawable.parc));
-        attractions.add(new Attractions(getString(R.string.restThreeName),getString(R.string.restThreeAddress),getString(R.string.restThreeDescription),R.drawable.parc));
-        attractions.add(new Attractions(getString(R.string.restFourName),getString(R.string.restFourAddress),getString(R.string.restFourDescription),R.drawable.parc));
-        attractions.add(new Attractions(getString(R.string.restFiveName),getString(R.string.restFiveAddress),getString(R.string.restFiveDescription),R.drawable.parc));
+        attractions.add(new Attractions(getString(R.string.restTwoName),getString(R.string.restTwoAddress),getString(R.string.restTwoDescription),R.drawable.thelove));
+        attractions.add(new Attractions(getString(R.string.restThreeName),getString(R.string.restThreeAddress),getString(R.string.restThreeDescription),R.drawable.thedandelion));
+        attractions.add(new Attractions(getString(R.string.restFourName),getString(R.string.restFourAddress),getString(R.string.restFourDescription),R.drawable.whitedogcafe));
+        attractions.add(new Attractions(getString(R.string.restFiveName),getString(R.string.restFiveAddress),getString(R.string.restFiveDescription),R.drawable.budandmarilyn));
 
 
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
+
+        recyclerView.setHasFixedSize(true);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
 
