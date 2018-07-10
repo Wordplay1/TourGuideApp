@@ -3,10 +3,14 @@ package com.example.android.tourguideapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,9 +26,31 @@ public class RestaurantFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        TextView textView = new TextView(getActivity());
-        textView.setText(R.string.hello_blank_fragment);
-        return textView;
+        View rootView = inflater.inflate(R.layout.words_list,container,false);
+
+        final ArrayList<Attractions> attractions = new ArrayList<>();
+
+        attractions.add(new Attractions(getString(R.string.restOneName),getString(R.string.restOneAddress),getString(R.string.restOneDescription),R.drawable.parc));
+        attractions.add(new Attractions(getString(R.string.restTwoName),getString(R.string.restTwoAddress),getString(R.string.restTwoDescription),R.drawable.parc));
+        attractions.add(new Attractions(getString(R.string.restThreeName),getString(R.string.restThreeAddress),getString(R.string.restThreeDescription),R.drawable.parc));
+        attractions.add(new Attractions(getString(R.string.restFourName),getString(R.string.restFourAddress),getString(R.string.restFourDescription),R.drawable.parc));
+        attractions.add(new Attractions(getString(R.string.restFiveName),getString(R.string.restFiveAddress),getString(R.string.restFiveDescription),R.drawable.parc));
+
+
+        RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(rootView.getContext());
+
+        MainAdapter adapter = new MainAdapter(rootView.getContext(),attractions);
+
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter.notifyDataSetChanged();
+
+
+
+        return rootView;
     }
 
 }

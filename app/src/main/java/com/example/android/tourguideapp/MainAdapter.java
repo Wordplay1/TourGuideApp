@@ -43,7 +43,7 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Redirecting too " + currentAttraction.getName() + "......", Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "Redirecting to " + currentAttraction.getName() + "......", Toast.LENGTH_SHORT).show();
             }
         });
     }
