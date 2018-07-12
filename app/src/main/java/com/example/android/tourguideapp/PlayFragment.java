@@ -48,8 +48,6 @@ public class PlayFragment extends Fragment {
 
         adapter.notifyDataSetChanged();
 
-
-
         return rootView;
     }
 

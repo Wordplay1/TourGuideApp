@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -17,11 +16,9 @@ import java.util.ArrayList;
  */
 public class RestaurantFragment extends Fragment {
 
-
     public RestaurantFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,7 +33,6 @@ public class RestaurantFragment extends Fragment {
         attractions.add(new Attractions(getString(R.string.restFourName),getString(R.string.restFourAddress),getString(R.string.restFourDescription),R.drawable.whitedogcafe));
         attractions.add(new Attractions(getString(R.string.restFiveName),getString(R.string.restFiveAddress),getString(R.string.restFiveDescription),R.drawable.budandmarilyn));
 
-
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view);
 
         recyclerView.setHasFixedSize(true);
@@ -49,8 +45,6 @@ public class RestaurantFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         adapter.notifyDataSetChanged();
-
-
 
         return rootView;
     }

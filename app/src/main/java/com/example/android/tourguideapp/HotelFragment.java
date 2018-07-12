@@ -22,7 +22,6 @@ public class HotelFragment extends Fragment {
 
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,8 +47,6 @@ public class HotelFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         adapter.notifyDataSetChanged();
-
-
 
         return rootView;
     }
